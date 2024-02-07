@@ -17,7 +17,7 @@ fi
 
 content=$(cat "$filename")
 
-capitalized_content=$(echo "$content" | perl -pe 'BEGIN{undef $/;} s/([.!?]\s+|^)(\w)/$1\u$2/gsm')
+capitalized_content=$(echo "$content" | perl -pe 'BEGIN{undef $/;} s/([.!?]\s+|^)(\w)/$1\u$2/g')
 
 echo "$capitalized_content" > "$output_file"
 
